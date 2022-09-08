@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// React: Different Syntax
+/////////////////////////////////////////////////////
+/*
 const page = (
   <div id="container">
     <img src="./logo512.png" alt="Logo" width={40} height={40} />
@@ -36,8 +41,11 @@ function TemporaryPage() {
 }
 
 root.render(<TemporaryPage />);
+*/
 
 // React: Parent/Child
+/////////////////////////////////////////////////////
+/*
 function Header() {
   return (
     <header>
@@ -67,6 +75,59 @@ function Content() {
         <li>I'm more likely to get a job as a developer if I know React</li>
       </ol>
     </React.Fragment>
+  );
+}
+
+function Page() {
+  return (
+    <div id="container">
+      <Header />
+      <Content />
+      <Footer />
+    </div>
+  );
+}
+
+root.render(<Page />);
+*/
+
+// React: Styling and Class
+/////////////////////////////////////////////////////
+function Header() {
+  return (
+    <header>
+      <nav className="navbar">
+        <img className="nav-logo" src="./logo512.png" alt="Logo" />
+        <ul className="nav-list">
+          <li>Pricing</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <small>© 2022 Travis development. All rights reserved.</small>
+    </footer>
+  );
+}
+
+function Content() {
+  return (
+    <div className="content">
+      <h1>Fun facts about React</h1>
+      <ul>
+        <li>Was first released in 2013</li>
+        <li>Was originally created by Jordan Walke</li>
+        <li>Has well over 100K stars on GitHub</li>
+        <li>Is maintained by Facebook</li>
+        <li>Powers thousands of enterprise apps, including mobile apps</li>
+      </ul>
+    </div>
   );
 }
 
